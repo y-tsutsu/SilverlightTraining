@@ -1,0 +1,177 @@
+﻿<UserControl x:Class="SilverlightTraining.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignHeight="526" d:DesignWidth="795" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" Loaded="UserControl_Loaded">
+
+    <UserControl.Resources>
+        <Style x:Key="BaseRectStyle" TargetType="Rectangle">
+            <Setter Property="StrokeThickness" Value="0"/>
+            <Setter Property="Margin" Value="1,1,0,0"/>
+        </Style>
+        <Style x:Key="TitleSunRectStyle" BasedOn="{StaticResource BaseRectStyle}" TargetType="Rectangle">
+            <Setter Property="Fill">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Offset="0" Color="Crimson"/>
+                        <GradientStop Offset="1" Color="LightCoral"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="TitleSatRectStyle" BasedOn="{StaticResource BaseRectStyle}" TargetType="Rectangle">
+            <Setter Property="Fill">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Offset="0" Color="CornflowerBlue"/>
+                        <GradientStop Offset="1" Color="LightBlue"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="TitleDayRectStyle" BasedOn="{StaticResource BaseRectStyle}" TargetType="Rectangle">
+            <Setter Property="Fill">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Offset="0" Color="LightSteelBlue"/>
+                        <GradientStop Offset="1" Color="LightBlue"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="DateSunRectStyle" BasedOn="{StaticResource BaseRectStyle}" TargetType="Rectangle">
+            <Setter Property="Fill">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Offset="0" Color="MistyRose"/>
+                        <GradientStop Offset="1" Color="FloralWhite"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="DateSatRectStyle" BasedOn="{StaticResource BaseRectStyle}" TargetType="Rectangle">
+            <Setter Property="Fill">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Offset="0" Color="Lavender"/>
+                        <GradientStop Offset="1" Color="GhostWhite"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="DateDayRectStyle" BasedOn="{StaticResource BaseRectStyle}" TargetType="Rectangle">
+            <Setter Property="Fill">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Offset="0" Color="AliceBlue"/>
+                        <GradientStop Offset="1" Color="GhostWhite"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="WhiteSunRectStyle" TargetType="Rectangle" BasedOn="{StaticResource BaseRectStyle}">
+            <Setter Property="Fill" Value="Transparent"/>
+        </Style>
+        <Style x:Key="BaseTextStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="4"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style x:Key="TitleSunTextStyle" TargetType="TextBlock" BasedOn="{StaticResource BaseTextStyle}">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="TitleSatTextStyle" TargetType="TextBlock" BasedOn="{StaticResource BaseTextStyle}">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="MidnightBlue"/>
+        </Style>
+        <Style x:Key="TitleDayTextStyle" TargetType="TextBlock" BasedOn="{StaticResource BaseTextStyle}">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="DimGray"/>
+        </Style>
+        <Style x:Key="TitleTopTextStyle" TargetType="TextBlock" BasedOn="{StaticResource BaseTextStyle}">
+            <Setter Property="Foreground" Value="WhiteSmoke"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="DateSunTextStyle" TargetType="TextBlock" BasedOn="{StaticResource BaseTextStyle}">
+            <Setter Property="Foreground" Value="Crimson"/>
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
+        <Style x:Key="DateSatTextStyle" TargetType="TextBlock" BasedOn="{StaticResource BaseTextStyle}">
+            <Setter Property="Foreground" Value="Blue"/>
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
+        <Style x:Key="DateDayTextStyle" TargetType="TextBlock" BasedOn="{StaticResource BaseTextStyle}">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
+        <Style x:Key="WhiteSunTextStyle" TargetType="TextBlock" BasedOn="{StaticResource BaseTextStyle}">
+            <Setter Property="Foreground" Value="LightPink"/>
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
+        <Style x:Key="WhiteSatTextStyle" TargetType="TextBlock" BasedOn="{StaticResource BaseTextStyle}">
+            <Setter Property="Foreground" Value="LightBlue"/>
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
+        <Style x:Key="WhiteDayTextStyle" TargetType="TextBlock" BasedOn="{StaticResource BaseTextStyle}">
+            <Setter Property="Foreground" Value="Silver"/>
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
+    </UserControl.Resources>
+    
+    <Grid x:Name="LayoutRoot" Background="DimGray">
+        <Grid Height="441" HorizontalAlignment="Left" Margin="12,73,0,0" Name="gridCalendar" VerticalAlignment="Top" Width="771">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="33" />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Rectangle Name="titleRect01" Grid.Column="0" Style="{StaticResource TitleSunRectStyle}" />
+            <Rectangle Name="titleRect02" Grid.Column="1" Style="{StaticResource TitleDayRectStyle}" />
+            <Rectangle Name="titleRect03" Grid.Column="2" Style="{StaticResource TitleDayRectStyle}" />
+            <Rectangle Name="titleRect04" Grid.Column="3" Style="{StaticResource TitleDayRectStyle}" />
+            <Rectangle Name="titleRect05" Grid.Column="4" Style="{StaticResource TitleDayRectStyle}" />
+            <Rectangle Name="titleRect06" Grid.Column="5" Style="{StaticResource TitleDayRectStyle}" />
+            <Rectangle Name="titleRect07" Grid.Column="6" Style="{StaticResource TitleSatRectStyle}" />
+            <TextBlock Name="titleText01" Text="Sun" Style="{StaticResource TitleSunTextStyle}" Grid.Column="0" />
+            <TextBlock Name="titleText02" Text="Mon" Style="{StaticResource TitleDayTextStyle}" Grid.Column="1" />
+            <TextBlock Name="titleText03" Text="Tue" Style="{StaticResource TitleDayTextStyle}" Grid.Column="2" />
+            <TextBlock Name="titleText04" Text="Wed" Style="{StaticResource TitleDayTextStyle}" Grid.Column="3" />
+            <TextBlock Name="titleText05" Text="Thu" Style="{StaticResource TitleDayTextStyle}" Grid.Column="4" />
+            <TextBlock Name="titleText06" Text="Fri" Style="{StaticResource TitleDayTextStyle}" Grid.Column="5" />
+            <TextBlock Name="titleText07" Text="Sat" Style="{StaticResource TitleSatTextStyle}" Grid.Column="6" />
+        </Grid>
+        <Grid Height="55" HorizontalAlignment="Left" Margin="13,12,0,0" Name="gridTop" VerticalAlignment="Top" Width="770">
+            <StackPanel Name="stackPanelTop" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Width="211">
+                <Button Content="&lt;" Height="26" Name="buttonLeft" Width="35" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0" Click="buttonLeft_Click" />
+                <TextBlock Height="21" Name="textBlockTop" Text="" Width="108" Style="{StaticResource TitleTopTextStyle}" Margin="16,4" />
+                <Button Content="&gt;" Height="26" Name="buttonRight" Width="35" Margin="0" Click="buttonRight_Click" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>
